@@ -8,7 +8,7 @@ import { useState } from 'react';
 function App() {
   // General information
   const [generalInfo, setGeneralInfo] = useState({})
-
+  
   // Education
   const [educationExp, setEductationExp] = useState({})
 
