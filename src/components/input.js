@@ -2,9 +2,9 @@ import React from 'react'
 
 const Input = ({label, type}) => {
   return (
-    <div className='text-left container mb-4'>
-        <label htmlFor={`${label.toLowerCase().replaceAll(' ', '-')}`} className='mb-4'></label>
-        <input className='px-4 py-4 border-none bg-light-gray rounded-md w-full'
+    <div className='text-left w-full mb-8'>
+        <label htmlFor={`${label.toLowerCase().replaceAll(' ', '-')}`} className='px-4'>{label}</label>
+        <input className='px-4 text-light py-4 border-none bg-slate-700 rounded-sm w-full outline-none'
         type={`${type}` } placeholder={`${label}`}/>
     </div>
   )
