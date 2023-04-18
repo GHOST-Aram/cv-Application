@@ -8,8 +8,7 @@ import { useState } from 'react';
 function App() {
 
 
-  // Education
-  const [educationExp, setEductationExp] = useState({})
+  
 
   //Work Exp
   const [workExp, setWorkExp] = useState({})
