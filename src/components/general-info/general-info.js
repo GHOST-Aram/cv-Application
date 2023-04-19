@@ -6,16 +6,17 @@ import { useState } from 'react';
 const GeneralInfo = () => {
   // Display state controller
   const [isSaved, setIsSaved] = useState(false)
-
+  
   //Editing state manager
   const [isEditing, setIsEditing] = useState(false)
+  
   // General information
   const [generalInfo, setGeneralInfo] = useState({})
-
+  
   // Genaral.name .email .phone
   const [name, setName] = useState(''); const [phone, setPhone] = useState(''); const [email, setEmail] = useState('')
-
-
+  
+  
   const statesSetter = {
     "setEmail": setEmail,
     "setName": setName,
@@ -29,6 +30,9 @@ const GeneralInfo = () => {
 
     // Display form
     setIsSaved(!isSaved)
+
+    // Change text content of submit button
+    setIsEditing(!isEditing)
   }
   const submit = (e) => {
     e.preventDefault()
