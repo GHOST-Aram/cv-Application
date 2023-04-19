@@ -17,6 +17,9 @@ export const WorkExperience = () => {
     const [role, setRole] = useState('');const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
 
+    // Track the details in a separate variable and use as prop
+    let values = {company: company, jobTitle: jobTitle, role: role, startDate: startDate, endDate: endDate}
+
     // Object of all work experience property state setters
     const statesSetter = {
         "setCompany": setCompany,
@@ -45,6 +48,8 @@ export const WorkExperience = () => {
         // Create Object
         setWorkExp({...workExp, company: company, jobTitle: jobTitle, role: role, startDate: startDate, endDate: endDate} )
 
+        // Update prop variable
+        values = workExp
         // Reset states
         setCompany(''); setJobTitle(''); setRole(''); setStartDate(''); setEndDate('')
 
@@ -57,7 +62,7 @@ export const WorkExperience = () => {
   return (
     <>
     { !isSaved ?//Hide form after user input is saves and display CV
-        <Form submissionHandler={submit} statesSetter={statesSetter} workExp={workExp} />
+        <Form submissionHandler={submit} statesSetter={statesSetter} workExp={values} />
         :
         //Render details when form is submitted
         <WorkDetails workExp={workExp} handleClick = {initateEditing}/>

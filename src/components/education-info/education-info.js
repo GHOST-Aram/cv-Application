@@ -16,6 +16,8 @@ const EducationForm = () => {
   const [institution, setInstitution] = useState('');const [title, setTitle] = useState('');const [achievement, setAchievement] = useState('')
   const [startDate, setStartDate] = useState('');const [completeDate, setCompleteDate] = useState('')
 
+  //Prop holder for education exp values
+  let values = {institution: institution, title: title, achievement: achievement, startDate: startDate, completeDate:completeDate}
   //States setter 
   const statesSetter = {
     "setInstitution":setInstitution,"setTitle":setTitle,"setAchievement":setAchievement,
@@ -40,6 +42,8 @@ const EducationForm = () => {
     // Create object
     setEductationExp({...educationExp, institution:institution, title: title, achievement:achievement, startDate: startDate, completeDate:completeDate})
 
+    //Update value of values obj {variable that trucks education exp props}
+    values = educationExp
     // Reset states
     setInstitution('');  setTitle(''); setAchievement(''); setStartDate(''); setCompleteDate('')
 
@@ -53,7 +57,7 @@ const EducationForm = () => {
   return (
     <>
     { !isSaved ?//Remove form from DOM after saving details then render details
-        <Form handleSubmission={submit} statesSetter={statesSetter} educationExp={educationExp}/>
+        <Form handleSubmission={submit} statesSetter={statesSetter} educationExp={values}/>
       :
       <EducationDetails educationExp={educationExp}  handleClick ={initateEditing}/>
     }

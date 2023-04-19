@@ -16,18 +16,14 @@ const GeneralInfo = () => {
   // Genaral.name .email .phone
   const [name, setName] = useState(''); const [phone, setPhone] = useState(''); const [email, setEmail] = useState('')
   
+  //Pops 
+  let values = {name: name, phone: phone, email: email}
   
-  const statesSetter = {
-    "setEmail": setEmail,
-    "setName": setName,
-    "setPhone": setPhone,
-  }
+  const statesSetter = {"setEmail": setEmail, "setName": setName, "setPhone": setPhone,}
   
   const initateEditing = () => {
     //Populate form with current data
-    setEmail(generalInfo.email)
-    setName(generalInfo.name)
-    setPhone(generalInfo.phone)
+    setEmail(generalInfo.email); setName(generalInfo.name); setPhone(generalInfo.phone)
 
     // Display form
     setIsSaved(!isSaved)
@@ -39,6 +35,9 @@ const GeneralInfo = () => {
     e.preventDefault()
     // Create general info Object
     setGeneralInfo({...generalInfo, name: name, phone: phone, email:email,})
+
+    // Update calue of object representing props
+    values = generalInfo
     // Reset states
     setEmail(''); setName(''); setPhone('')
 
@@ -55,7 +54,7 @@ const GeneralInfo = () => {
     <>
     { !isSaved ?
       <Form statesSetter={statesSetter} submissionHandler={submit} 
-      isEditing={isEditing} generalInfo={generalInfo}/>
+      isEditing={isEditing} generalInfo={values}/>
     :
       <GeneralDetails generalInfo={generalInfo} handleClick={initateEditing}/>
     }
