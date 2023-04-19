@@ -8,21 +8,15 @@ const EducationForm = () => {
   const [educationExp, setEductationExp] = useState({})
 
   // Education experience properties
-  const [institution, setInstitution] = useState('Maseno');const [title, setTitle] = useState('Maseno');const [achievement, setAchievement] = useState('Maseno')
-  const [startDate, setStartDate] = useState('Maseno');const [completeDate, setCompleteDate] = useState('Maseno')
+  const [institution, setInstitution] = useState('');const [title, setTitle] = useState('');const [achievement, setAchievement] = useState('')
+  const [startDate, setStartDate] = useState('');const [completeDate, setCompleteDate] = useState('')
 
   const onSubmit = (e) =>{
     e.preventDefault()
 
     // Create object
-    setEductationExp({
-      ...educationExp,
-      institution:institution,
-      title: title,
-      achievement:achievement,
-      startDate: startDate,
-      completeDate:completeDate
-    })
+    setEductationExp({...educationExp, institution:institution, title: title, achievement:achievement, startDate: startDate, completeDate:completeDate})
+
     // Reset states
     setInstitution('');  setTitle(''); setAchievement(''); setStartDate(''); setCompleteDate('')
   }
