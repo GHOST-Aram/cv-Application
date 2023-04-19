@@ -45,8 +45,8 @@ const EducationForm = () => {
       <div className='container-2 text-left'>
         <h2 className="font-light text-center py-8">Education Experience</h2>
         <div className='grid grid-3 gap-8 py-8'>
-          <Data label='Instituiton' value={institution}/><Data label='Study Title' value={title}/><Data label='Achievement' value={achievement}/>
-          <Data label='StartDate' value={startDate}/><Data label='Completion Date' value={completeDate}/>
+          <Data label='Instituiton' value={educationExp.institution}/><Data label='Study Title' value={educationExp.title}/><Data label='Achievement' value={educationExp.achievement}/>
+          <Data label='StartDate' value={educationExp.startDate}/><Data label='Completion Date' value={educationExp.completeDate}/>
         </div>
         <EditButton />
       </div>
