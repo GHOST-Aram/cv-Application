@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import Input from './input'
 import SubmitBtn from './submit-button'
-const WorkExperience = () => {
+
+export const WorkExperience = () => {
     // Work Exp Sate
     const [workExp, setWorkExp] = useState({})
 
