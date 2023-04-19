@@ -1,6 +1,6 @@
 import './App.css';
 import Footer from './components/footer';
-import GeneralForm from './components/general-info/general-form';
+import GeneralInfo from './components/general-info/general-info';
 import Header from './components/header';
 import EducationInfo from './components/education-info/education-info';
 import WorkExperience from './components/work-info/work-experience';
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Header />
       <main className='py-8'>
-        <GeneralForm />
+        <GeneralInfo />
         <EducationInfo />
         <WorkExperience />
       </main>
