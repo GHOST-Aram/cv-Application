@@ -9,7 +9,7 @@ const GeneralInfo = () => {
   
   //Editing state manager
   const [isEditing, setIsEditing] = useState(false)
-  
+
   // General information
   const [generalInfo, setGeneralInfo] = useState({})
   
@@ -22,6 +22,7 @@ const GeneralInfo = () => {
     "setName": setName,
     "setPhone": setPhone,
   }
+  
   const initateEditing = () => {
     //Populate form with current data
     setEmail(generalInfo.email)
@@ -43,6 +44,9 @@ const GeneralInfo = () => {
 
     // Invert output controller
     setIsSaved(!isSaved)
+
+    // Invert is editing if true
+    if(isEditing){setIsEditing(!isEditing)}
   }
 
   // States setter

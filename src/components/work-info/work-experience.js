@@ -50,6 +50,9 @@ export const WorkExperience = () => {
 
         // Set as saved 
         setIsSaved(!isSaved)
+
+        // Reset isEditing state
+        if(isEditing){setIsEditing(!isEditing)}
     }
   return (
     <>
