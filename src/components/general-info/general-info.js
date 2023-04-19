@@ -6,12 +6,30 @@ import { useState } from 'react';
 const GeneralInfo = () => {
   // Display state controller
   const [isSaved, setIsSaved] = useState(false)
+
+  //Editing state manager
+  const [isEditing, setIsEditing] = useState(false)
   // General information
   const [generalInfo, setGeneralInfo] = useState({})
 
   // Genaral.name .email .phone
   const [name, setName] = useState(''); const [phone, setPhone] = useState(''); const [email, setEmail] = useState('')
 
+
+  const statesSetter = {
+    "setEmail": setEmail,
+    "setName": setName,
+    "setPhone": setPhone,
+  }
+  const initateEditing = () => {
+    //Populate form with current data
+    setEmail(generalInfo.email)
+    setName(generalInfo.name)
+    setPhone(generalInfo.phone)
+
+    // Display form
+    setIsSaved(!isSaved)
+  }
   const submit = (e) => {
     e.preventDefault()
     // Create general info Object
@@ -24,18 +42,14 @@ const GeneralInfo = () => {
   }
 
   // States setter
-  const statesSetter = {
-    "setEmail": setEmail,
-    "setName": setName,
-    "setPhone": setPhone,
-  }
   
   return (
     <>
     { !isSaved ?
-      <Form statesSetter={statesSetter} submissionHandler={submit} generalInfo={generalInfo}/>
+      <Form statesSetter={statesSetter} submissionHandler={submit} 
+      isEditing={isEditing} generalInfo={generalInfo}/>
     :
-      <GeneralDetails generalInfo={generalInfo} />
+      <GeneralDetails generalInfo={generalInfo} handleClick={initateEditing}/>
     }
     </>
   )
