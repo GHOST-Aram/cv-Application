@@ -5,6 +5,7 @@
   --slate-700: rgb(148 163 184);
   --slate-500: rgb(51 65 85);
   --small-radius: 6px;
+  --yellow-500:rgb(234 179 8);
 }
 *{
   padding: 0;
@@ -22,6 +23,9 @@
 .bg-slate-700{
   background-color: var(--slate-700);
 }
+.bg-yellow-500{
+  background-color: var(--yellow-500);
+}
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -38,11 +42,27 @@ code {
   width: 40%;
   margin: auto;
 }
+.container-2{
+  width: 60%;
+  margin: auto;
+}
+.text-lg{
+  font-size: 1.2rem;
+}
 .font-light{
   font-weight: 300;
 }
 .font-medium{
   font-weight: 400;
+}
+.gap-8{
+  gap: 1rem;
+}
+.grid{
+  display: grid;
+}
+.grid-3{
+  grid-template-columns: repeat(3, 1fr);
 }
 input[type=submit]:hover{
   transform: scale(1.05);
@@ -68,6 +88,9 @@ input[type=submit]:hover{
 }
 .px-12{
   padding-inline: 1.5rem;
+}
+.px-16{
+  padding-inline: 2rem;
 }
 .py-4{
   padding-block: .5rem;
