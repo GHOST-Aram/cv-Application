@@ -1,8 +1,8 @@
 import React from 'react'
-import Data from './data'
-import EditButton from './edit-button'
-import Input from './input'
-import SubmitBtn from './submit-button'
+import Data from '../data'
+import EditButton from '../edit-button'
+import Input from '../input'
+import SubmitBtn from '../submit-button'
 import { useState } from 'react'
 const EducationForm = () => {
   // Display state manager

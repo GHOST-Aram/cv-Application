@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import Input from './input'
-import SubmitBtn from './submit-button'
-import EditButton from './edit-button'
-import Data from './data'
+import Input from '../input'
+import SubmitBtn from '../submit-button'
+import EditButton from '../edit-button'
+import Data from '../data'
 
 export const WorkExperience = () => {
     // Display State Controller
