@@ -1,7 +1,8 @@
-import React from 'react'
+// import React, { useState } from 'react'
 import Input from './input'
 import SubmitBtn from './submit-button'
 const WorkExperience = () => {
+    // Work Exp Sate
   return (
     <form className='container text-left'>
         <h2 className="text-center font-light">Work Experience</h2>

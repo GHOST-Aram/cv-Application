@@ -7,11 +7,9 @@ const EducationForm = () => {
   // Education
   const [educationExp, setEductationExp] = useState({})
 
-  const [institution, setInstitution] = useState('Maseno')
-  const [title, setTitle] = useState('Maseno')
-  const [achievement, setAchievement] = useState('Maseno')
-  const [startDate, setStartDate] = useState('Maseno')
-  const [completeDate, setCompleteDate] = useState('Maseno')
+  // Education experience properties
+  const [institution, setInstitution] = useState('Maseno');const [title, setTitle] = useState('Maseno');const [achievement, setAchievement] = useState('Maseno')
+  const [startDate, setStartDate] = useState('Maseno');const [completeDate, setCompleteDate] = useState('Maseno')
 
   const onSubmit = (e) =>{
     e.preventDefault()
@@ -25,20 +23,12 @@ const EducationForm = () => {
       startDate: startDate,
       completeDate:completeDate
     })
-
-    console.log(educationExp)
     // Reset states
-    setInstitution('')
-    setTitle('')
-    setAchievement('')
-    setStartDate('')
-    setCompleteDate('')
-
-
+    setInstitution('');  setTitle(''); setAchievement(''); setStartDate(''); setCompleteDate('')
   }
 
   return (
-    <form onSubmit = {onSubmit} className='container text-left'>
+    <form onSubmit = {(e) => onSubmit(e)} className='container text-left'>
         <h2 className="text-center font-light">Latest Education Experience</h2>
         <Input handleChange={(e)=>setInstitution(e.target.value)} value={institution} type= 'text' label= 'Institution' />
         <Input handleChange={(e)=>setTitle(e.target.value)} value={title} type= 'text' label= 'Study Title' />
